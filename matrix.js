@@ -15,18 +15,13 @@ const Matrix = {
             }
             transposed.push(row);
         }
-
         return transposed.filter((arr) => arr.length);
     },
 
     isValidMatrix: function(matrix) {
         const length = matrix[0].length;
 
-        return matrix.every(
-            (el) => {
-                return el.length === length;
-            }
-        );
+        return matrix.every((el) => el.length === length);
     },
 
     isValidMatrices: function(arr1, arr2) {
@@ -40,19 +35,12 @@ const Matrix = {
     },
 
     matrixMultByInt: function(matrix, int) {
-        return matrix.map(
-            (x) => {
-                return x.map(
-                    (r) => {
-                        return r * int;
-                    }
-                );
-            }
-        );
+        return matrix.map((x) => x.map((r) => r * int));
     },
 
     matrixMultiply: function (matrix1, matrix2) {
         if (!this.isValidMatrices(matrix1, matrix2)) return null;
+
         const resultMatrix = [];
 
         for (let j = 0; j < matrix1.length; j++) {
@@ -70,31 +58,4 @@ const Matrix = {
     }
 };
 
-
-const matrix = [
-    [1, 2, 3],
-    [4, 5, 6]
-];
-
-const matrix2 = [
-    [7, 8],
-    [9, 10],
-    [11, 12]
-];
-
-const validMatrix = [
-    [1, 2],
-    [3, 4],
-    [5, 6],
-    [7, 8]
-];
-
-const arr = [
-    [1, 2, 3],
-    [4, 5, 6]
-];
-
-// console.log(Matrix.matrixMultiply(matrix, matrix2));
-// console.log(Matrix.isValidMatrices(matrix, invalidMatrix));
-console.log(Matrix.transpose(validMatrix));
-console.log(Matrix.transpose(arr));
+module.exports = Matrix;
