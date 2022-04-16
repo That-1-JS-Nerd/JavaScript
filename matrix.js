@@ -34,10 +34,6 @@ const Matrix = {
         return validRows && validCols || false;
     },
 
-    matrixMultByInt: function(matrix, int) {
-        return matrix.map((x) => x.map((r) => r * int));
-    },
-
     matrixMultiply: function (matrix1, matrix2) {
         if (!this.isValidMatrices(matrix1, matrix2)) return null;
 
