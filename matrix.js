@@ -30,7 +30,7 @@ const Matrix = {
         let validRows = arr1.length === arr2[0].length;
         let validCols = arr1[0].length === arr2.length;
 
-        return validRows && validCols || false;
+        return validRows && validCols;
     },
 
     matrixMultiply: function (matrix1, matrix2) {
