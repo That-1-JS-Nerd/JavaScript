@@ -25,11 +25,10 @@ const Matrix = {
     },
 
     isValidMatrices: function(arr1, arr2) {
-        let validRows, validCols;
-    
         if (!this.isValidMatrix(arr1) || !this.isValidMatrix(arr2)) return [];
-        if (arr1.length === arr2[0].length) validRows = true;
-        if (arr1[0].length === arr2.length) validCols = true;
+        
+        let validRows = arr1.length === arr2[0].length;
+        let validCols = arr1[0].length === arr2.length;
 
         return validRows && validCols || false;
     },
